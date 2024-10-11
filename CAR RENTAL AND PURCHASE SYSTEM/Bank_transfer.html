@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Transfer</title>
+<style>
+    .container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Bank Transfer</h2>
+  <form id="transferForm">
+    <div class="form-group">
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" placeholder="Account number"name="accountNumber" required>
+    </div>
+    <button type="button" onclick="showPinPopup()">Submit</button>
+  </form>
+</div>
+
+<div id="pinPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePinPopup()">&times;</span>
+    <h3>Enter PIN</h3>
+    <input type="password" id="pin" name="pin" required>
+    <button type="button" onclick="submitTransfer()">Submit</button>
+  </div>
+</div>
+
+<script>
+    function showPinPopup() {
+  var popup = document.getElementById("pinPopup");
+  popup.style.display = "block";
+}
+
+function closePinPopup() {
+  var popup = document.getElementById("pinPopup");
+  popup.style.display = "none";
+}
+
+function submitTransfer() {
+  var pin = document.getElementById("pin").value;
+  // You can add further logic here to handle the bank transfer
+  alert("Transfer successful!");
+  // Close the pin popup after successful transfer
+  closePinPopup();
+}
+
+</script>
+
+</body>
+</html>

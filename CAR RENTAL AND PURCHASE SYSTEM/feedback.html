@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#successMessage {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Feedback Form</h2>
+  <form id="feedbackForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" placeholder="message here"name="message" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="successMessage" class="hidden">Thank you for your feedback!</div>
+</div>
+
+<script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Get form data
+  var formData = new FormData(this);
+  
+  // Convert form data to JSON
+  var jsonData = {};
+  formData.forEach(function(value, key) {
+    jsonData[key] = value;
+  });
+  
+  // Simulate form submission (you would send this data to your server in a real application)
+  console.log(jsonData); // Log the form data (you would send this to your server)
+  
+  // Display success message
+  document.getElementById('successMessage').classList.remove('hidden');
+  
+  // Clear form
+  this.reset();
+});
+
+</script>
+</body>
+</html>

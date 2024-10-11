@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Card Payment</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<form id="paymentForm">
+  <label for="idNumber">ID Number:</label>
+  <input type="text" id="idNumber"required><br>
+
+  <label for="bank">Bank:</label>
+  <select id="bank"name="bank" required>
+    <option value="">Select Bank</option>
+    <option value="bank1">KCB</option>
+    <option value="bank2">Cooparative_Bank</option>
+    <option value="bank3">Equity_Bank</option>
+    <option value="bank4">Family_Bank</option>
+    <option value="bank5">Barclays_Bank</option>
+    <option value="bank6">CBK_Bank</option>
+    <option value="bank7">Standaed_Chartered_Bank</option>
+    <option value="bank8s">Diamond_Trust_Bank</option>
+  </select><br>
+
+  <label for="pin">PIN:</label>
+  <input type="password" id="pin" name="pin" required><br>
+
+  <input type="submit" value="Confirm payment">
+</form>
+
+<script>
+document.getElementById("paymentForm").onsubmit = function() {
+  // You can add your payment processing logic here
+  alert("Payment Successful!"); // For demonstration purposes
+  return false; // Prevents form submission for this example
+};
+</script>
+
+</body>
+</html>

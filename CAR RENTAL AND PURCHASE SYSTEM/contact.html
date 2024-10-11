@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Car Rental System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .contact-info {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        .contact-info-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .contact-info-item h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .contact-info-item p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .contact-form textarea {
+            height: 120px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <div class="contact-info-item">
+                <h2>Location</h2>
+                <p>123 Car Rental Street</p>
+                <p>City, State, Zip Code</p>
+            </div>
+            <div class="contact-info-item">
+                <h2>Phone</h2>
+                <p>0743377115</p>
+            </div>
+            <div class="contact-info-item">
+                <h2>Email</h2>
+                <p>admin@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send us a Feedback</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name"placeholder="Enter your name"name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"placeholder="Kindly give your feedback" required></textarea>
+               <input type="button" onclick="myFunction()" value="submit" name >
+                  <script>
+                    function myFunction() {
+                   alert("Feedback successfully updated");
+                  }
+         </script>
+         <footer class="footer">
+            <nav class="icons">
+          <div class="social-icons">
+            <a href="https://web.whatsapp.com/target="_blank"><i class="fab fa-whatsapp"> whatsapp</i></a>
+            <a href="https://www.instagram.com/__cassiey_/"target="_blank"><i class="fab fa-instagram">instagram</i></a>
+            <a href="https://twitter.com/home"target="_blank"><i class="fab fa-twitter"></i>twitter</a>
+          </div>
+            </nav>
+          </footer>
+</body>
+</html>

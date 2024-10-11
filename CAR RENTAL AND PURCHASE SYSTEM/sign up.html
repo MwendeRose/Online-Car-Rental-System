@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <form id="signup-form">
+    <h2>Sign Up</h2>
+    <div class="form-group">
+      <input type="text" id="first-name" placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="last-name" placeholder="Last Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+        <label for="options">Choose your location:</label>
+    </div>
+    <div class="form-group">
+      <button type="submit">Sign Up</button>
+    </div>
+    <p>Already have an account?<a href="Login.html">Login</a></p>
+  </form>
+</div>
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  var firstName = document.getElementById('first-name').value;
+  var lastName = document.getElementById('last-name').value;
+  var email = document.getElementById('email').value;
+  var location = document.getElementById('location').value;
+  
+  // You can perform further validation here
+  
+  // Assuming we're just logging the values for demonstration purposes
+  console.log('First Name:', firstName);
+  console.log('Last Name:', lastName);
+  console.log('Email:', email);
+  console.log('Location:', location);
+});
+
+</script>
+</body>
+</html>

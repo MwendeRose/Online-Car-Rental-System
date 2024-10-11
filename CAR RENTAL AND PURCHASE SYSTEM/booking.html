@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Booking</title>
+    <style>
+    /* Styles for vehicles and basket */
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .vehicles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .vehicle {
+        width: calc(33.33% - 20px);
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    
+    .vehicle img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    
+    .vehicle-details {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    
+    .vehicle-details h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    .vehicle-details p {
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .basket {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    
+    .basket h2 {
+        margin-top: 0;
+    }
+    
+    #basketTable {
+        width: 100%;
+    }
+    
+    #basketTable th,
+    #basketTable td {
+        padding: 8px;
+        text-align: center;
+    }
+    
+    #basketTable th {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Vehicles</h1>
+        <div class="vehicles">
+            <div class="vehicle" onclick="addToBasket('Audi 2021 model', 50)">
+                <img src="Models/Audi 2021 model.jpg" alt="Audi 2021 model">
+                <div class="vehicle-details">
+                    <h2>Audi 2021 model</h2>
+                    <p>Year: 2022</p>
+                    <p>Color: White</p>
+                    <p>Price per day: $50</p>
+                </div>
+            </div>
+            <div class="vehicle" onclick="addToBasket('Lexus', 55)">
+                <img src="Models/Lexus RX.jpg" alt="Lexus RX">
+                <div class="vehicle-details">
+                    <h2>Lexus</h2>
+                    <p>Year: 2021</p>
+                    <p>Color: Silver</p>
+                    <p>Price per day: $55</p>
+                </div>
+            </div>
+            <div class="vehicle" onclick="addToBasket('Mercedes SLK R171', 80)">
+                <img src="Models/mercedez SLK R171.jpg" alt="Mercedes SLK R171">
+                <div class="vehicle-details">
+                    <h2>Mercedes SLK R171</h2>
+                    <p>Year: 2020</p>
+                    <p>Color: Black</p>
+                    <p>Price per day: $80</p>
+                </div>
+            </div>
+            <div class="vehicle" onclick="addToBasket('Toyota 2018', 80)">
+                <img src="Models/toyota 2018.webp" alt="Toyota 2018">
+                <div class="vehicle-details">
+                    <h2>Toyota 2018</h2>
+                    <p>Year: 2018</p>
+                    <p>Color: Black</p>
+                    <p>Price per day: $80</p>
+                </div>
+            </div>
+            <div class="vehicle" onclick="addToBasket('Toyota 2017', 80)">
+                <img src="Models/Toyota 2017.jpg" alt="Toyota 2017">
+                <div class="vehicle-details">
+                    <h2>Toyota 2017</
+                        7>
+                        <p>Year: 2017</p>
+                        <p>Color: Black</p>
+                        <p>Price per day: $80</p>
+                    </div>
+                </div>
+                <div class="vehicle" onclick="addToBasket('Mercedes C200', 80)">
+                    <img src="Models/mercedez C200.jpg" alt="Mercedes C200">
+                    <div class="vehicle-details">
+                        <h2>Mercedes C200</h2>
+                        <p>Year: 2020</p>
+                        <p>Color: Black</p>
+                        <p>Price per day: $80</p>
+                    </div>
+                </div>
+                <div class="vehicle" onclick="addToBasket('Mercedes C class', 80)">
+                    <img src="Models/mercedenz C class.webp" alt="Mercedes C class">
+                    <div class="vehicle-details">
+                        <h2>Mercedes C class</h2>
+                        <p>Year: 2020</p>
+                        <p>Color: Blue</p>
+                        <p>Price per day: $80</p>
+                    </div>
+                </div>
+                <div class="vehicle" onclick="addToBasket('Mercedes A class', 80)">
+                    <img src="Models/mercedenz A class.webp" alt="Mercedes A class">
+                    <div class="vehicle-details">
+                        <h2>Mercedes A class</h2>
+                        <p>Year: 2020</p>
+                        <p>Color: White</p>
+                        <p>Price per day: $80</p>
+                    </div>
+                </div>
+                <div class="vehicle" onclick="addToBasket('BMW series i7', 80)">
+                    <img src="Models/BMW series i7.jpg" alt="BMW series i7">
+                    <div class="vehicle-details">
+                        <h2>BMW series i7</h2>
+                        <p>Year: 2020</p>
+                        <p>Color: White</p>
+                        <p>Price per day: $80</p>
+                    </div>
+                </div>
+                <!-- Add more vehicle cards here if needed -->
+            </div>
+        </div>
+    
+        <div class="basket">
+            <h2>Booking Basket</h2>
+            <table id="basketTable">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="basketBody">
+                    <!-- Basket items will be populated here -->
+                </tbody>
+            </table>
+            <button onclick="proceedToPayment()">Proceed to Payment</button>
+        </div>
+    
+        <script>
+            // Array to store selected vehicles and their prices
+            let basket = [];
+    
+            // Function to add a vehicle to the basket
+            function addToBasket(vehicleName, price) {
+                basket.push({ vehicle: vehicleName, price: price });
+                updateBasket();
+            }
+    
+            // Function to update the basket display
+            function updateBasket() {
+                const basketBody = document.getElementById('basketBody');
+                basketBody.innerHTML = '';
+                let totalPrice = 0;
+                basket.forEach((item, index) => {
+                    const row = basketBody.insertRow();
+                    const vehicleCell = row.insertCell(0);
+                    const priceCell = row.insertCell(1);
+                    const totalCell = row.insertCell(2);
+                    const removeCell = row.insertCell(3);
+                    vehicleCell.textContent = item.vehicle;
+                    priceCell.textContent = '$' + item.price;
+                    totalPrice += item.price;
+                    totalCell.textContent = '$' + totalPrice;
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    removeButton.onclick = function() {
+                        basket.splice(index, 1);
+                        updateBasket();
+                    };
+                    removeCell.appendChild(removeButton);
+                });
+            }
+    
+            // Function to proceed to the payment dashboard
+            function proceedToPayment() {
+                if (basket.length === 0) {
+                    alert('Please select at least one vehicle to proceed to payment.');
+                } else {
+                    // Redirect to the payment dashboard page
+                    window.location.href = 'proceed_to_payment.html';
+                }
+            }
+        </script>
+    </body>
+    </html    

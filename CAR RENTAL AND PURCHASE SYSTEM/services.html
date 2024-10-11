@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Services</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.service {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.service:last-child {
+  border-bottom: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Car Rental Services</h1>
+    <div id="services"></div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const services = [
+    { name: "Daily Rentals", description: "Rent a car for a day at affordable rates." },
+    { name: "Weekly Rentals", description: "Rent a car for a week and enjoy discounted prices." },
+    { name: "Monthly Rentals", description: "Long-term rentals available for a month or more." },
+    { name: "Chauffeur Services", description: "Hire a professional driver for your convenience." },
+    { name: "Airport Pick-up/Drop-off", description: "We provide shuttle services to and from the airport." }
+  ];
+
+  const servicesContainer = document.getElementById("services");
+
+  services.forEach(service => {
+    const serviceElement = document.createElement("div");
+    serviceElement.classList.add("service");
+
+    const serviceName = document.createElement("h3");
+    serviceName.textContent = service.name;
+
+    const serviceDescription = document.createElement("p");
+    serviceDescription.textContent = service.description;
+
+    serviceElement.appendChild(serviceName);
+    serviceElement.appendChild(serviceDescription);
+
+    servicesContainer.appendChild(serviceElement);
+  });
+});
+
+  </script>
+  <div style="text-align: center;">
+  <p><h3>Thank you for choosing us to serve you</h3></p><br>
+  <p><h3>Your feedback will be appreacited</h3></p><br>
+  <p>lets here from you</p><a href="feedback.html">Feedback</a>
+  </div>
+</body>
+</html>

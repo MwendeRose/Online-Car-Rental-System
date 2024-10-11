@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Payment Option</h1>
+        <div class="payment-options">
+            <button onclick="proceedToPayment('mpesa')"><a href="mpesa_payment.html">Pay via M-Pesa</button></a>
+            <button onclick="proceedToPayment('bank')"><a href="Bank_tranfer.html">Pay via Bank Transfer</button>
+            <button onclick="proceedToPayment('card')"><a href="credit_payment.html">Pay via Credit Card</button>
+        </div>
+    </div>
+    <script>
+        function proceedToPayment(paymentMethod) {
+    switch(paymentMethod) {
+        case 'mpesa':
+            alert('Redirecting to mpesa payment...');
+            // Here you can add code to redirect the user to the M-Pesa payment page
+            break;
+        case 'bank':
+            alert('Redirecting to Bank Transfer payment...');
+            // Here you can add code to redirect the user to the bank transfer payment page
+            break;
+        case 'card':
+            alert('Redirecting to Credit/Debit Card payment...');
+            // Here you can add code to redirect the user to the credit/debit card payment page
+            break;
+        default:
+            alert('Invalid payment method.');
+    }
+}
+
+    </script>
+</body>
+</html>

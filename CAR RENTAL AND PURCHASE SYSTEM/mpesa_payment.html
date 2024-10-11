@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Pesa Payment</title>
+    <style>
+        /* Add your CSS styles here */
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>M-Pesa Payment</h1>
+        <form id="paymentForm" onsubmit="completePayment(event)">
+            <label for="phoneNumber">Enter Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="0712345678">
+            <button type="submit">Complete Payment</button>
+        </form>
+    </div>
+    <script> 
+    // Function to complete the payment
+function completePayment(event) {
+    event.preventDefault();
+
+    // Get phone number entered by the user
+    const phoneNumber = document.getElementById('phoneNumber').value;
+
+    // Check if phone number is entered
+    if (phoneNumber.trim() === '') {
+        alert('Please enter your phone number.');
+    } else {
+        // Prompt user to enter M-Pesa PIN
+        const pin = prompt('Please enter your M-Pesa PIN to complete the payment:');
+        
+        // Check if PIN is entered
+        if (pin) {
+            // Send popup command to complete payment
+            alert(`Payment completed successfully with phone number: ${phoneNumber} and PIN: ${pin}`);
+        } else {
+            alert('PIN is required to complete the payment. Please try again.');
+        }
+    }
+}
+
+    </script>
+</body>
+</html>
